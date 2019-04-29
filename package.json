@@ -1,0 +1,24 @@
+{
+  "name": "plantafacil",
+  "version": "1.0.0",
+  "description": "Planta Facil",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rorolopetegui/PlantaFacil.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rorolopetegui/PlantaFacil/issues"
+  },
+  "homepage": "https://github.com/rorolopetegui/PlantaFacil#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
