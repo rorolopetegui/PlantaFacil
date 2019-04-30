@@ -5,11 +5,11 @@ const app = express();
 
 app.get('/api/turnOn', (req, res) => {
     let ret = false;
-    if (LED.readSync() === 0) { //check the pin state, if the state is 0 (or off)
-        LED.writeSync(1); //set pin state to 1 (turn LED on)
+    if (relay.readSync() === 0) { //check the pin state, if the state is 0 (or off)
+        relay.writeSync(1); //set pin state to 1 (turn LED on)
         ret = true;
     } else {
-        LED.writeSync(0); //set pin state to 0 (turn LED off)
+        relay.writeSync(0); //set pin state to 0 (turn LED off)
     }
     res.json(ret);
 })
