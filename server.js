@@ -20,11 +20,6 @@ app.get('/api/turnOnRelay', (req, res) => {
     console.log("Gpio: ", gpio);
     if (gpio) {
         var sensor = sensors[_.findIndex(sensors, ['_gpio', parseInt(gpio)])];
-        console.log("sensor");
-        console.log(sensor);
-        console.log("Sensores");
-        console.log(sensors);
-        /*
         if (sensor.readSync() === 0) { //check the pin state, if the state is 0 (or off)
             sensor.writeSync(1); //set pin state to 1 (turn LED on)
             ret = true;
@@ -32,7 +27,6 @@ app.get('/api/turnOnRelay', (req, res) => {
             sensor.writeSync(0); //set pin state to 0 (turn LED off)
         }
         console.log(sensors);
-        */
     }
     res.json(ret);
 })
