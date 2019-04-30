@@ -2,7 +2,7 @@ const express = require('express');
 var _ = require('lodash');
 class Gpio {
     constructor(gpio, output) {
-        this.gpio = gpio;
+        this._gpio = gpio;
         this.output = output;
         this.state = 0;
     }
@@ -29,7 +29,7 @@ app.get('/api/turnOnRelay', (req, res) => {
     var gpio = req.query.gpio;
     console.log("Gpio: ", gpio);
     if (gpio) {
-        var sensor = sensors[_.findIndex(sensors, ['gpio', parseInt(gpio)])];
+        var sensor = sensors[_.findIndex(sensors, ['_gpio', parseInt(gpio)])];
         console.log("sensor");
         console.log(sensor);
         console.log("Sensores");
