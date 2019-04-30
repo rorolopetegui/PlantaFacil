@@ -1,7 +1,18 @@
 const express = require('express');
 var _ = require('lodash');
-var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
-
+class Gpio {
+    constructor(gpio, output) {
+        this.gpio = gpio;
+        this.output = output;
+        this.state = 0;
+    }
+    readSync() {
+        return this.state;
+    }
+    writeSync(state) {
+        this.state = state;
+    }
+}
 const app = express();
 
 var gpioList = [26, 19, 13, 06, 12, 16, 20, 21];
@@ -10,6 +21,8 @@ var sensors = [];
 for (var i = 0; i < gpioList.length; i++) {
     sensors.push(new Gpio(gpioList[i], 'out')); //use GPIO pin 4, and specify that it is output
 }
+
+
 
 app.get('/api/turnOnRelay', (req, res) => {
     let ret = false;
