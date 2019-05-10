@@ -6,6 +6,6 @@
  * reducers accidentally picking up actions they shouldn't.
  *
  * Follow this format:
- * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
+ * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT'
  */
-export const MENU_TITLE = 'Plantá Fácil';
+export const MENU_TITLE = 'Plantá Fácil'

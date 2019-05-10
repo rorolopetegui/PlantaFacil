@@ -1,17 +1,17 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 
 //Pages
-import HomePage from 'containers/HomePage/Loadable';
-import SettingsPage from 'containers/SettingsPage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import HomePage from 'containers/HomePage/Loadable'
+import SettingsPage from 'containers/SettingsPage/Loadable'
+import NotFoundPage from 'containers/NotFoundPage/Loadable'
 //NavBar
-import { NavBar } from '../../components';
+import { NavBar } from '../../components'
 
 //Styles for global page
-import GlobalStyle from '../../global-styles';
+import GlobalStyle from '../../global-styles'
 //Constants
-import { MENU_TITLE } from './constants';
+import { MENU_TITLE } from './constants'
 
 export default function App() {
   return (
@@ -28,5 +28,5 @@ export default function App() {
         Footer
       </footer>
     </div>
-  );
+  )
 }

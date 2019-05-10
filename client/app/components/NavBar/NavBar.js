@@ -1,15 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link as RouterLink } from 'react-router-dom'
+import classNames from 'classnames'
 import {
     withStyles, Drawer, AppBar, Toolbar, List, CssBaseline, Typography,
-    Divider, IconButton, ListItem, ListItemIcon, ListItemText, Button
-} from '@material-ui/core';
-import { Menu, ChevronLeft, ChevronRight, Home, Settings } from '@material-ui/icons';
+    Divider, IconButton, ListItem, ListItemIcon, ListItemText, Button,
+    Link
+} from '@material-ui/core'
+import { Menu, ChevronLeft, ChevronRight, Home, Settings } from '@material-ui/icons'
 
 
-const drawerWidth = 240;
+const drawerWidth = 240
 
 const styles = theme => ({
     root: {
@@ -77,23 +78,25 @@ const styles = theme => ({
         flexGrow: 1,
         padding: theme.spacing.unit * 3,
     },
-});
+})
+
+const MyLink = props => <RouterLink to="/open-collective" {...props} />
 
 class NavBar extends React.Component {
     state = {
         open: false,
-    };
+    }
 
     handleDrawerOpen = () => {
-        this.setState({ open: true });
-    };
+        this.setState({ open: true })
+    }
 
     handleDrawerClose = () => {
-        this.setState({ open: false });
-    };
+        this.setState({ open: false })
+    }
 
     render() {
-        const { classes, theme, children, title } = this.props;
+        const { classes, theme, children, title } = this.props
         return (
             <div className={classes.root}>
                 <CssBaseline />
@@ -148,7 +151,7 @@ class NavBar extends React.Component {
                     </div>
                     <Divider />
                     <List>
-                        <Link to={"/"} style={{ textDecoration: 'none' }}>
+                        <Link component={RouterLink} to={"/"} style={{ textDecoration: 'none' }}>
                             <ListItem button key={"Home"}>
                                 <ListItemIcon><Home /></ListItemIcon>
                                 <ListItemText primary={"Home"} />
@@ -157,7 +160,7 @@ class NavBar extends React.Component {
                     </List>
                     <Divider />
                     <List>
-                        <Link to={"/settings"} style={{ textDecoration: 'none' }}>
+                        <Link component={RouterLink} to={"/settings"} style={{ textDecoration: 'none' }}>
                             <ListItem button key={"Settings"}>
                                 <ListItemIcon><Settings /></ListItemIcon>
                                 <ListItemText primary={"Settings"} />
@@ -170,7 +173,7 @@ class NavBar extends React.Component {
                     {children}
                 </main>
             </div>
-        );
+        )
     }
 }
 
@@ -178,6 +181,6 @@ NavBar.propTypes = {
     classes: PropTypes.object.isRequired,
     theme: PropTypes.object.isRequired,
     children: PropTypes.node,
-};
+}
 
-export default withStyles(styles, { withTheme: true })(NavBar);
+export default withStyles(styles, { withTheme: true })(NavBar)
