@@ -44,7 +44,7 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "prettify": "prettier --write"
   },
-  "proxy": "192.168.1.100:5000",
+  "proxy": "http://localhost:5000",
   "browserslist": [
     "last 2 versions",
     "> 1%",
