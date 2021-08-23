@@ -2,17 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   withStyles,
-  List,
   ListItem,
   ListItemAvatar,
   ListItemSecondaryAction,
   ListItemText,
   Avatar,
   IconButton,
-  Grid,
-  Typography,
   Switch,
-  Icon,
 } from '@material-ui/core';
 import { Folder, CalendarToday, Timer } from '@material-ui/icons';
 
@@ -24,6 +20,8 @@ const styles = theme => ({
   },
 });
 
+const fixGpio = gpio => (gpio < 10 ? `0${gpio}` : gpio);
+
 class InteractiveList extends React.Component {
   state = {
     switch: false,
@@ -31,9 +29,15 @@ class InteractiveList extends React.Component {
 
   handleSwitch = gpio => {
     this.setState({ switch: !this.state.switch });
-    const url = `/api/turnOnRelay?gpio=${gpio}` < 10 ? `0${gpio}` : gpio;
+
+    const url = `http://192.168.0.155:5000/api/turnOnRelay?gpio=${fixGpio(
+      gpio,
+    )}`;
+    console.log('url', url);
     fetch(url)
-      .then(response => console.log('YAYYY'))
+      .then(response => {
+        console.log('YAYYY', response);
+      })
       .catch(e => console.log(e));
   };
 
