@@ -12,23 +12,29 @@ console.log('20', sensors[_.findIndex(sensors, ['_gpio', 20])]);
 
 var myTest = sensors[_.findIndex(sensors, ['_gpio', 20])];
 
-console.log('myTest', myTest);
+console.log('Sensor', myTest);
 myTest.writeSync(0)
 console.log('A 0');
-
+console.log('Sensor', myTest);
 setTimeout(() => {
     myTest.writeSync(1)
     console.log('A 1');
+    
+console.log('Sensor', myTest);
 }, 1000)
 
 setTimeout(() => {
     myTest.writeSync(0)
     console.log('A 0');
+    
+console.log('Sensor', myTest);
 }, 2000)
 
 setTimeout(() => {
     myTest.writeSync(1)
     console.log('A 1');
+    
+console.log('Sensor', myTest);
 }, 3000)
 
 setTimeout(() => {
