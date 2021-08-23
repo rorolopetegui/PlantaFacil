@@ -12,7 +12,7 @@ var gpioList = [21, 20, 26, 19, 16, 13, 12, 6];
 var sensors = [];
 
 for (var i = 0; i < gpioList.length; i++) {
-    sensors.push(new Gpio(gpioList[i], 'out')); //use GPIO pin 4, and specify that it is output
+    sensors.push(new Gpio(gpioList[i], 'low')); //use GPIO pin 4, and specify that it is output
 }
 
 console.log(sensors[_.findIndex(sensors, ['_gpio', 20])]);
