@@ -34,6 +34,7 @@ class InteractiveList extends React.Component {
       gpio,
     )}`;
     console.log('url', url);
+
     fetch(url)
       .then(response => {
         console.log('YAYYY', response);

@@ -1,10 +1,14 @@
 const express = require('express');
+const cors = require('cors');
 var _ = require('lodash');
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
 
 const app = express();
+app.use(cors({
+    origin: '*'
+}));
 
-var gpioList = [26, 19, 13, 06, 12, 16, 20, 21];
+var gpioList = [21, 20, 26, 19, 16, 13, 12, 6];
 var sensors = [];
 
 for (var i = 0; i < gpioList.length; i++) {
