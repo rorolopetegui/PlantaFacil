@@ -1,8 +1,6 @@
 var _ = require('lodash');
 var Gpio = require('onoff').Gpio; //include onoff to interact with the GPIO
 
-const app = express();
-
 var gpioList = [26, 19, 13, 06, 12, 16, 20, 21];
 var sensors = [];
 
