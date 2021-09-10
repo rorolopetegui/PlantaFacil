@@ -1,3 +1,3 @@
-import InteractiveList from './InteractiveList';
+import InteractiveList from './InteractiveList'
 
-export { InteractiveList };
+export { InteractiveList }

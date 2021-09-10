@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link as RouterLink } from 'react-router-dom';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link as RouterLink } from 'react-router-dom'
+import classNames from 'classnames'
 import {
   withStyles,
   Drawer,
@@ -17,16 +17,16 @@ import {
   ListItemText,
   Button,
   Link,
-} from '@material-ui/core';
+} from '@material-ui/core'
 import {
   Menu,
   ChevronLeft,
   ChevronRight,
   Home,
   Settings,
-} from '@material-ui/icons';
+} from '@material-ui/icons'
 
-const drawerWidth = 240;
+const drawerWidth = 240
 
 const styles = theme => ({
   root: {
@@ -94,25 +94,23 @@ const styles = theme => ({
     flexGrow: 1,
     padding: theme.spacing.unit * 3,
   },
-});
-
-const MyLink = props => <RouterLink to="/open-collective" {...props} />;
+})
 
 class NavBar extends React.Component {
   state = {
     open: false,
-  };
+  }
 
   handleDrawerOpen = () => {
-    this.setState({ open: true });
-  };
+    this.setState({ open: true })
+  }
 
   handleDrawerClose = () => {
-    this.setState({ open: false });
-  };
+    this.setState({ open: false })
+  }
 
   render() {
-    const { classes, theme, children, title } = this.props;
+    const { classes, theme, children, title } = this.props
     return (
       <div className={classes.root}>
         <CssBaseline />
@@ -206,14 +204,15 @@ class NavBar extends React.Component {
           {children}
         </main>
       </div>
-    );
+    )
   }
 }
 
 NavBar.propTypes = {
+  title: PropTypes.string.isRequired,
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
   children: PropTypes.node,
-};
+}
 
-export default withStyles(styles, { withTheme: true })(NavBar);
+export default withStyles(styles, { withTheme: true })(NavBar)

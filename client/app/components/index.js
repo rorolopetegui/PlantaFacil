@@ -1,6 +1,6 @@
-import NavBar from './NavBar/NavBar';
-import Sensor from './Sensor/Sensor';
+import NavBar from './NavBar/NavBar'
+import Sensor from './Sensor/Sensor'
 
-export { NavBar, Sensor };
+export { NavBar, Sensor }
 
-export { InteractiveList } from './Lists';
+export { InteractiveList } from './Lists'
